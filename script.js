@@ -325,9 +325,9 @@ planets.forEach(({ planet, radius, distance, satellites }, index) => {
   // Add the planet and its satellites
   planet.position.x = distance;
   planet.scale.set(0.1, 0.1, 0.1);
-  if (planet.name == 'Saturn') {
+  if (planet.name.search('Saturn') != -1) {
     console.log("Putting ring on it");
-    const saturnRing = createRing(saturnData.ringInnerRadius, saturnData.ringOuterRadius, saturnData.ringTexturePath);
+    const saturnRing = createRing(saturnData.ringInnerRadius + 3, saturnData.ringOuterRadius, saturnData.ringTexturePath);
     planet.add(saturnRing);
   }
 
